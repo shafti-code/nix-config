@@ -82,6 +82,9 @@
             gh
             ghostty
             git
+            gtk2
+            gtk3
+            gtk4
             hyprcursor
             hyprland
             hyprland-protocols
