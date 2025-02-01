@@ -77,6 +77,8 @@
             fira-code-symbols
             texlivePackages.fontawesome
             nerdfonts
+            noto-fonts-monochrome-emoji
+
 
     ];
     environment.systemPackages = with pkgs; [
@@ -94,6 +96,7 @@
             gtk4
             wireplumber
             brightnessctl
+            emojione
             freecad-wayland
             hyprcursor
             hyprland
