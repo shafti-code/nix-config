@@ -15,7 +15,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
     
 
-
+    programs.neovim.defaultEditor = true;
     networking.hostName = "nixos"; # Define your hostname.
 # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -59,10 +59,15 @@
         packages = with pkgs; [];
     };
 
+# Set shell for all users to zsh, for some reason i forgor why but i like zsh
+    users.defaultUserShell = pkgs.zsh;
+    programs.zsh.enable = true;
+
 # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
     fonts.enableDefaultPackages = true;
+
     fonts.enableGhostscriptFonts = true;
 # List packages installed in system profile. To search, run:
 # $ nix search wget
@@ -76,6 +81,8 @@
     ];
     environment.systemPackages = with pkgs; [
             btop
+            nautilus
+            isoimagewriter
             clang-tools
             firefox
             gcc
@@ -85,6 +92,9 @@
             gtk2
             gtk3
             gtk4
+            wireplumber
+            brightnessctl
+            freecad-wayland
             hyprcursor
             hyprland
             hyprland-protocols
@@ -108,6 +118,7 @@
             swww
             vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
             vlc
+            gnome-disk-utility
             waybar
             wlogout
             wofi
@@ -116,6 +127,13 @@
             zls
 #  wget
     ];
+
+  # Enable VirtualBox kernel modules
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+
+  # Add your user to the vboxusers group
+  users.extraGroups.vboxusers.members = [ "shafti" ];
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
