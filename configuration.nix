@@ -82,33 +82,34 @@
 
     ];
     environment.systemPackages = with pkgs; [
+            blender
+            brightnessctl
             btop
-            nautilus
-            isoimagewriter
             clang-tools
+            emojione
             firefox
+            freecad-wayland
             gcc
             gh
             ghostty
             git
+            gnome-disk-utility
             gtk2
             gtk3
             gtk4
-            wireplumber
-            brightnessctl
-            emojione
-            freecad-wayland
             hyprcursor
             hyprland
             hyprland-protocols
             hyprlock
             hyprshade
             hyprshot
+            isoimagewriter
             kitty
             libgcc
             lua-language-server
             lxappearance
             lxappearance-gtk2
+            nautilus
             neofetch
             neovim
             nwg-look
@@ -121,8 +122,8 @@
             swww
             vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
             vlc
-            gnome-disk-utility
             waybar
+            wireplumber
             wlogout
             wofi
             yazi
