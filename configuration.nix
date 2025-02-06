@@ -29,6 +29,7 @@
 # Set your time zone.
     time.timeZone = "Europe/Warsaw";
 
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 # Select internationalisation properties.
     i18n.defaultLocale = "en_US.UTF-8";
 
@@ -92,6 +93,7 @@
             gcc
             gh
             ghostty
+            ghfetch
             git
             gnome-disk-utility
             gtk2
@@ -128,6 +130,7 @@
             wofi
             yazi
             zig
+            xfce.thunar
             zls
 #  wget
     ];
