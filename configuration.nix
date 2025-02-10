@@ -83,6 +83,8 @@
 
     ];
     environment.systemPackages = with pkgs; [
+            tmux
+            tty-clock
             blender
             brightnessctl
             btop
