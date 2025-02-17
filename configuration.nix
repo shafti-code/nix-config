@@ -1,6 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+#test
 
 { config, pkgs, ... }:
 
@@ -11,9 +12,14 @@
         ];
 
 # Bootloader.
-    boot.loader.systemd-boot.enable = true;
+    # boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.grub.enable = true;
+    boot.loader.grub.efiSupport = true;
+    boot.loader.grub.device = "nodev";
+    boot.loader.grub.useOSProber = true;
     
+    programs.dconf.enable = true;
 
     programs.neovim.defaultEditor = true;
     networking.hostName = "nixos"; # Define your hostname.
@@ -83,24 +89,26 @@
 
     ];
     environment.systemPackages = with pkgs; [
-            tmux
-            tty-clock
             blender
             brightnessctl
             btop
             clang-tools
+            cmake
+            dconf
             emojione
             firefox
             freecad-wayland
             gcc
             gh
-            ghostty
             ghfetch
+            ghostty
             git
             gnome-disk-utility
+            grub2
             gtk2
             gtk3
             gtk4
+            gvfs
             hyprcursor
             hyprland
             hyprland-protocols
@@ -108,14 +116,17 @@
             hyprshade
             hyprshot
             isoimagewriter
+            isoimagewriter
             kitty
             libgcc
+            libusb1
             lua-language-server
             lxappearance
             lxappearance-gtk2
             nautilus
             neofetch
             neovim
+            ninja
             nwg-look
             python3
             rose-pine-cursor
@@ -124,15 +135,19 @@
             spotify
             spotify-cli-linux
             swww
+            tmux
+            tty-clock
+            udisks2
             vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
             vlc
+            hyprlock
             waybar
             wireplumber
             wlogout
             wofi
+            xfce.thunar
             yazi
             zig
-            xfce.thunar
             zls
 #  wget
     ];
