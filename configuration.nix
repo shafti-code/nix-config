@@ -152,13 +152,6 @@
 #  wget
     ];
 
-  # Enable VirtualBox kernel modules
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-
-  # Add your user to the vboxusers group
-  users.extraGroups.vboxusers.members = [ "shafti" ];
-
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.
 # programs.mtr.enable = true;
